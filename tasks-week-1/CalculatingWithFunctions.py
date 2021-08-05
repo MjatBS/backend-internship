@@ -20,19 +20,18 @@ def nine(*args):
 	return number(9, *args)
 
 def plus(num):
-	return (lambda x, y: x + y), num
+	return (lambda x: x + num)
 def minus(num):
-	return (lambda x, y: x - y), num
+	return (lambda x: x - num)
 def times(num):
-	return (lambda x, y: x * y), num
+	return (lambda x: x * num)
 def divided_by(num):
-	return (lambda x, y: x // y), num
+	return (lambda x: x // num)
 
 def number(num, *args):
+	print(args)
 	if len(args) == 0:
 		return num
 	else:
-		action = args[0]
-		fun = action[0]
-		second_num = action[1]
-		return fun(num, second_num)
+		fun = args[0]
+		return fun(num)
