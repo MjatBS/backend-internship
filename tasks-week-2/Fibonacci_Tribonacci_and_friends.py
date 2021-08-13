@@ -1,5 +1,5 @@
-def tribonacci(signature, n):
-    '''calculate Tribonacci series'''
+def Xbonacci(signature, n):
+    '''calculate Xbonacci series'''
     if n < 0:
         return []
     else:
@@ -18,6 +18,10 @@ def anybonacci_gen(signature):
     for now in base:
         yield now
     while True:
-        base = base[1], base[2], base[0] + base[1] + base[2]
-        now = base[2]
+        sum = 0
+        for i in range(len(base) - 1):
+            sum += base[i]
+            base[i] = base[i+1]
+        base[-1] += sum
+        now = base[-1]
         yield now
