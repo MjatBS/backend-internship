@@ -1,7 +1,7 @@
-class int_add(int):
+class IntAdd(int):
    def __call__(self, integer):
-      return int_add(self + integer)
+      return IntAdd(self + integer)
 
 
 def add(integer):
-   return(int_add(integer))
+   return(IntAdd(integer))
